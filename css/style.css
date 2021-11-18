@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/* Variables */
+:root {
+  /* text */
+  --question-text-color-active: hsl(238, 29%, 16%);
+  --question-text-color: hsl(237, 12%, 33%);
+  --answer-text-color: hsl(240, 6%, 50%);
+  
+  /* Background gradient */
+  --Soft-violet: hsl(273, 75%, 66%);
+  --Soft-blue: hsl(240, 73%, 65%);
+  
+  /* icons */
+  --icons: hsl(14, 88%, 65%);
+  
+  /* dividers */
+  --Light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+:root {
+  --first-font-family: 'Kumbh Sans', sans-serif;
+  --small-font-size: 12px;
+}
+
+/* Geral */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--small-font-size);
+}
+
+body {
+  font-family: var(--first-font-family);
+  background: linear-gradient(var(--Soft-violet), var(--Soft-blue));
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-grid {
+  display: grid;
+  grid-template-columns: 100%;
+
+  width: 90%;
+  max-width: 700px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 0 2rem 4rem;
+  border-radius: 1rem; 
+  position: relative;
+}
+
+/* Section Image */
+.image {
+  background: url(../images/bg-pattern-mobile.svg) no-repeat;
+  background-position: 2rem .5rem;
+}
+
+.image img {
+  max-width: 220px;
+  transform: translate(3rem, -50%);
+}
+
+
+
+/* Section Accordion */
+.accordion__title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--Light-grayish-blue);
+  padding: 1rem 0;
+}
+
+.accordion__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all ease-in-out .5s;
+  cursor: pointer;
+}
+
+.accordion__question:hover {
+  color: var(--icons);
+}
+
+.accordion__header i {
+  color: var(--icons);
+  font-size: 1.4rem;
+}
+
+.accordion__question {
+  color: var(--question-text-color);
+  font-weight: normal;
+}
+
+.accordion__content {
+  height: 0;
+  overflow: hidden;
+  transition: all ease .5s;
+}
+
+.accordion__description {
+  color: var(--answer-text-color);
+  max-width: 90%;
+}
+
+/* Accordion-open */
+.accordion-open .accordion__question {
+  color: var(--question-text-color-active);
+  font-weight: 700;
+}
+
+.accordion-open .accordion__header {
+  margin-bottom: 1rem;
+}
+
+.accordion-open .arrow-icon {
+  transform: rotate(180deg);
+}
