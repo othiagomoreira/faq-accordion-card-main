@@ -49,28 +49,33 @@ body {
   grid-template-columns: 100%;
 
   width: 90%;
-  max-width: 700px;
+  max-width: 900px;
 }
 
 .card {
   background-color: #fff;
   padding: 0 2rem 4rem;
   border-radius: 1rem; 
-  position: relative;
+
+  /* background-image: url(../images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 50%; */
 }
 
 /* Section Image */
-.image {
+.card__image {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-57%);
+
   background: url(../images/bg-pattern-mobile.svg) no-repeat;
-  background-position: 2rem .5rem;
 }
 
-.image img {
-  max-width: 220px;
-  transform: translate(3rem, -50%);
+.card__image img {
+  width: 80%;
+  max-width: 350px;
 }
-
-
 
 /* Section Accordion */
 .accordion__title {
@@ -129,4 +134,19 @@ body {
 
 .accordion-open .arrow-icon {
   transform: rotate(180deg);
+}
+
+@media screen and (min-width:768px) {
+  .bg-grid {
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+  }
+
+  .card {
+    padding: 4rem 2rem;
+  }
+
+  .accordion__title {
+    text-align: start;
+  }
 }
